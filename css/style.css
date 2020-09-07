@@ -219,12 +219,13 @@ h1 {
 	text-align: center;
 	letter-spacing: 0.06em;
 	color: var(--white-color);
+	fill: var(--white-color);
 	background: var(--accent-color);
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 	border-radius: 4px;
 	border: none;
 	outline: none;
-	transition-property: color, transform;
+	transition-property: color, transform, fill;
 	transition-duration: 250ms;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-delay: 0;
@@ -233,6 +234,7 @@ h1 {
 .btn:focus {
 	color: var(--accent-color);
 	background-color: var(--white-color);
+	fill: var(--accent-color);
 	cursor: pointer;
 }
 .backdrop {
@@ -553,16 +555,23 @@ h2 {
 }
 .block-footer {
 	/*justify-content: space-between;*/
-	align-items: center;
 	display: flex;
-	align-items: center;
+	align-items: baseline;
 	padding-top: 60px;
 	padding-bottom: 60px;
+}
+.block-footer > div:not(:last-child) {
+	width: calc((50% - 45px) / 2);
+	margin-right: 30px;
+}
+.block-footer > div:last-child {
+	width: calc(50% - 15px);
 }
 .footer-contacts {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
+	width: calc((50% - 45px) / 2);
 }
 .footer-logo {
 	display: inline-block;
@@ -609,9 +618,8 @@ h2 {
 .footer-join {
 	display: flex;
 	flex-direction: column;
-	margin-left: 70px;
 }
-.footer-join-title {
+.footer-title {
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: bold;
@@ -624,14 +632,13 @@ h2 {
 .footer-soc-list {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: start;
 	margin-top: 20px;
 }
 .footer-soc-item > a {
 	width: 20px;
 	height: 20px;
 	display: flex;
-	position: relative;
 	margin: 12px;
 	line-height: 0;
 	letter-spacing: 0;
@@ -656,25 +663,29 @@ h2 {
 	background-color: var(--accent-color);
 	cursor: pointer;
 }
-.footer-mailing {
-	display: flex;
-	flex-direction: row;
-	margin-left: 94px;
-}
-.footer-mailing-form {
+.subscribe {
 	display: flex;
 	flex-direction: column;
 }
-.footer-mailing input {
+.subscribe-button {
+	margin-left: 12px;
 	height: 50px;
-	width: 358px;
+}
+.form-wrap {
+	display: flex;
+	flex-direction: row;
 	margin-top: 20px;
+}
+.email-field {
+	height: 50px;
+	width: 55%;
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	box-sizing: border-box;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 	border-radius: 4px;
 	color: var(--white-color);
-	background-color: #2f303a;
+	background-color: transparent;
+	outline: none;
 	padding-left: 16px;
 	font-family: Roboto;
 	font-style: normal;
@@ -683,45 +694,23 @@ h2 {
 	line-height: 1.25;
 }
 
-.footer-mailing input:focus,
-.footer-mailing input:hover {
+.email-field:focus,
+.email-field:hover {
 	border-color: var(--accent-color);
 	box-shadow: 1px var(--accent-color);
 	cursor: pointer;
 }
-.footer-button-mailing {
-	margin-top: auto;
-	margin-left: 12px;
-}
-.footer-button-mailing button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-	border-radius: 4px;
-	width: 200px;
-	height: 50px;
-	color: var(--white-color);
-	background-color: var(--accent-color);
-	border: none;
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 16px;
-	line-height: 1.88;
-	text-align: center;
-}
-.footer-button-mailing > button > svg {
+
+.icon-send {
 	width: 24px;
 	height: 24px;
 	margin-left: 10px;
-	fill: #ffffff;
+	vertical-align: middle;
 }
 
 /*Portfolio*/
 
 /* Line */
-
 .header-line {
 	position: absolute;
 	width: 100%;
@@ -747,31 +736,7 @@ h2 {
 .btn-portfolio:not(:last-child) {
 	margin-right: 8px;
 }
-.btn-portfolio button {
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 1.63;
-	padding: 6px 22px;
-	border-radius: 4px;
-	color: var(--dark-color);
-	background: #f5f4fa;
-	/*box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);*/
-	border: none;
-	outline: none;
-}
-.btn-portfolio button:hover,
-.btn-portfolio button:focus {
-	transition-property: color, transform;
-	transition-duration: 250ms;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	transition-delay: 0;
-	color: var(--white-color);
-	background: var(--accent-color);
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 3px 1px rgba(0, 0, 0, 0.1);
-	cursor: pointer;
-}
+
 .portfolio-galery-list {
 	display: flex;
 	flex-wrap: wrap;
