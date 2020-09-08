@@ -232,7 +232,7 @@
 					</ul>
 				</div>
 				<div class="footer-join">
-					<h4 class="footer-join-title">Присоединяйтесь</h4>
+					<h4 class="footer-title">Присоединяйтесь</h4>
 					<ul class="list footer-soc-list">
 						<li class="footer-soc-item">
 							<a href="" aria-label="ссылка Instagram" target="_blank" rel="noopener noreferrer">
@@ -264,23 +264,18 @@
 						</li>
 					</ul>
 				</div>
-				<div class="footer-mailing">
-					<div class="footer-mailing-form">
-						<div>
-							<h4 class="footer-join-title">Подпишитесь на рассылку</h4>
-						</div>
-						<div>
-							<input type="email" pattern="E-mail" name="clien-email" placeholder="E-mail" id="malingbutton" />
-						</div>
-					</div>
-					<div class="footer-button-mailing">
-						<button type="submit">
+
+				<div class="subscribe">
+					<h4 class="footer-title">подпишитесь на рассылку</h4>
+					<form class="form-wrap" action="" method="POST">
+						<input class="email-field" type="email" placeholder="E-mail" name="subscribe" required="" />
+						<button type="submit" class="subscribe-button btn">
 							Подписаться
-							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<use xlink:href="./images/symbol-defs.svg#icon-send"></use>
+							<svg class="icon-send">
+								<use href="./images/symbol-defs.svg#icon-send"></use>
 							</svg>
 						</button>
-					</div>
+					</form>
 				</div>
 			</div>
 		</footer>
